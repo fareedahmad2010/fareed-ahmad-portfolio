@@ -10,8 +10,7 @@
 
 /* Muted looping portfolio video backgrounds */
 .showcase-content,.video-feature{position:relative;isolation:isolate;overflow:hidden}
-.showcase-content{background:transparent}
-.showcase-content::before,.video-feature::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:rgba(12,14,19,.42)}
+.showcase-content{background:transparent}.showcase-content::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:rgba(220,225,221,.78)} .video-feature::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:rgba(12,14,19,.42)}
 .showcase-background-video,.video-background-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;z-index:-2}
 .hero,.inner-hero{position:relative;isolation:isolate;overflow:hidden}
 .hero-background-video{position:absolute;inset:0;width:100%;max-width:100%;height:100%;object-fit:cover;z-index:-2;pointer-events:none}
