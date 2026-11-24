@@ -6,3 +6,14 @@
 @media (pointer:fine){body,body a,body button,body input,body textarea,body select{cursor:none}}
 
 .admin-lock{max-width:620px;margin:0 auto}.admin-lock h1{font:500 clamp(54px,7vw,78px)/1 var(--display);letter-spacing:-.07em;margin:23px 0}.admin-lock form{margin-top:28px}
+
+
+/* Muted looping portfolio video backgrounds */
+.showcase-content,.video-feature{position:relative;isolation:isolate;overflow:hidden}
+.showcase-content{background:transparent}
+.showcase-content::before,.video-feature::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:rgba(12,14,19,.42)}
+.showcase-background-video,.video-background-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;z-index:-2}
+.hero,.inner-hero{position:relative;isolation:isolate;overflow:hidden}
+.hero-background-video{position:absolute;inset:0;width:100%;max-width:100%;height:100%;object-fit:cover;z-index:-2;pointer-events:none}
+.hero::before,.inner-hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(100deg,rgba(9,11,16,.91),rgba(9,11,16,.62))}
+@media(prefers-reduced-motion:reduce){.showcase-background-video,.video-background-video,.hero-background-video{display:none}}
