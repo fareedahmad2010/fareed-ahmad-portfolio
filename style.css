@@ -65,3 +65,10 @@
 .whatsapp-float svg{width:26px;height:26px;flex:0 0 auto}
 @media(max-width:650px){.featured-work-section{padding-top:46px;padding-bottom:58px}.featured-work-heading{display:block}.featured-work-heading h2{font-size:36px}.featured-work-heading>p{margin-top:16px}.featured-project-media{aspect-ratio:4/3}.featured-project-footer{display:block;padding:20px}.featured-project-footer>.button{margin-top:18px}.featured-project-badge,.featured-project-hint{top:11px;left:11px;padding:7px 8px;font-size:7px}.featured-project-hint{left:auto;right:11px}.whatsapp-float{right:15px;bottom:15px;width:54px;height:54px;min-height:54px;padding:0}.whatsapp-float span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}}
 @media(prefers-reduced-motion:reduce){.featured-project-card,.whatsapp-float{transition:none}.featured-project-card:hover,.featured-project-card:focus-within,.whatsapp-float:hover,.whatsapp-float:focus-visible{transform:none}.featured-project-card:hover .featured-project-media,.featured-project-card:focus-within .featured-project-media{animation:none}}
+
+/* Repeat card interactions while the pointer stays over them. */
+@keyframes repeat-card-hover{0%,100%{transform:translateY(-3px);filter:brightness(1)}50%{transform:translateY(-7px);filter:brightness(1.045)}}
+@keyframes repeat-art-card-hover{from{filter:brightness(1)}to{filter:brightness(1.1)}}
+.service-card:hover,.service-card:focus-within,.offer-grid article:hover,.offer-grid article:focus-within,.sample-card:hover,.sample-card:focus-within{animation:repeat-card-hover 1.2s ease-in-out infinite alternate}
+.hero-art.is-visible .card-back:hover,.hero-art.is-visible .card-front:hover{animation:repeat-art-card-hover 1.1s ease-in-out infinite alternate}
+@media(prefers-reduced-motion:reduce){.service-card:hover,.service-card:focus-within,.offer-grid article:hover,.offer-grid article:focus-within,.sample-card:hover,.sample-card:focus-within,.hero-art.is-visible .card-back:hover,.hero-art.is-visible .card-front:hover{animation:none}}
