@@ -1,3 +1,5 @@
+const motionStylesheet = document.querySelector('link[rel="stylesheet"][href="style.css"]');
+if (motionStylesheet) motionStylesheet.href = 'style.css?v=20261126';
 document.querySelector('#year')?.replaceChildren(String(new Date().getFullYear()));
 document.querySelector('.menu-toggle')?.addEventListener('click',()=>document.querySelector('.nav')?.classList.toggle('open'));
 document.querySelector('#contact-form')?.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(e.currentTarget);const subject=encodeURIComponent(`Project enquiry — ${d.get('service')}`);const body=encodeURIComponent(`Hello Fareed,\n\nMy name is ${d.get('name')} (${d.get('email')}).\n\nI'm interested in: ${d.get('service')}\n\n${d.get('message')}\n\nRegards,\n${d.get('name')}`);window.location.href=`mailto:fareedahmad2010ali@gmail.com?subject=${subject}&body=${body}`;});const nameTitle = document.querySelector('.name-flair');
