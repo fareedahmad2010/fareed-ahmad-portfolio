@@ -2,6 +2,18 @@ document.querySelector('#year')?.replaceChildren(String(new Date().getFullYear()
 document.querySelector('.menu-toggle')?.addEventListener('click',()=>document.querySelector('.nav')?.classList.toggle('open'));
 document.querySelector('#contact-form')?.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(e.currentTarget);const subject=encodeURIComponent(`Project enquiry — ${d.get('service')}`);const body=encodeURIComponent(`Hello Fareed,\n\nMy name is ${d.get('name')} (${d.get('email')}).\n\nI'm interested in: ${d.get('service')}\n\n${d.get('message')}\n\nRegards,\n${d.get('name')}`);window.location.href=`mailto:fareedahmad2010ali@gmail.com?subject=${subject}&body=${body}`;});
 
+const resultsMarquee = document.querySelector('[data-results-marquee]');
+const resultsToggle = document.querySelector('[data-results-toggle]');
+
+if (resultsMarquee && resultsToggle) {
+  resultsToggle.addEventListener('click', () => {
+    const paused = resultsMarquee.classList.toggle('is-paused');
+    resultsToggle.setAttribute('aria-pressed', String(paused));
+    resultsToggle.setAttribute('aria-label', paused ? 'Resume statistics animation' : 'Pause statistics animation');
+    resultsToggle.innerHTML = paused ? 'Resume <span aria-hidden="true">▶</span>' : 'Pause <span aria-hidden="true">Ⅱ</span>';
+  });
+}
+
 const nameTitle = document.querySelector('.name-flair');
 const titleDescriptor = nameTitle?.closest('h1')?.querySelector('em');
 const heroDescription = nameTitle?.closest('.hero-copy')?.querySelector('.lead');
