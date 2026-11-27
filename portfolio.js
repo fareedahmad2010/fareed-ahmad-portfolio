@@ -7,7 +7,7 @@
     if (!host) return;
     const kind = host.dataset.sampleList;
     const items = read().filter(item => item.kind === kind);
-    host.innerHTML = items.length ? items.map(item => `<article class="sample-card"><a class="sample-image" href="${esc(item.media || item.cover)}" target="_blank" rel="noopener" style="${item.cover ? `background-image:url('${esc(item.cover)}')` : ''}">${item.kind === 'video' ? '<span class="sample-play">▶</span>' : '<span class="sample-open">VIEW ↗</span>'}</a><div class="sample-info"><small>${item.kind === 'video' ? 'AI VIDEO SAMPLE' : 'WEB PROJECT'}</small><h3>${esc(item.title)}</h3><p>${esc(item.description)}</p></div></article>`).join('') : '<p class="samples-empty">Your samples will appear here when you add them in the admin panel.</p>';
+    host.innerHTML = items.length ? items.map(item => `<article class="sample-card"><a class="sample-image" href="${esc(item.media || item.cover)}" target="_blank" rel="noopener" style="${item.cover ? `background-image:url('${esc(item.cover)}')` : ''}">${item.kind === 'video' ? '<span class="sample-play">▶</span>' : '<span class="sample-open">VIEW ↗</span>'}</a><div class="sample-info"><small>${item.kind === 'video' ? 'AI VIDEO SAMPLE' : 'WEB PROJECT'}</small><h3>${esc(item.title)}</h3><p>${esc(item.description)}</p></div></article>`).join('') : '';
   };
   const admin = document.querySelector('#sample-form');
   if (admin) {
